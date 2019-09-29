@@ -23,10 +23,11 @@ Improve testing
 Create a library and register to hex
 
 ## Installation
+```
 sudo apt install build-essential
 sudo apt-get install build-essential erlang-dev libatlas-base-dev
 mix deps.get
-
+```
 ## invoking
 make clone or download
 and enter "iex -S mix" on terminal
