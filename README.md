@@ -1,7 +1,7 @@
 # DeepPipe
-Deep Learning with elixir
-This project is called Deep Pipe(DP)
-I implemented backpropagation and numerical-gradient
+Deep Learning with elixir.
+This project is called Deep Pipe(DP).
+I implemented backpropagation and numerical-gradient.
 Now I'm testing small data set.
 
 Network example (See test.ex)
