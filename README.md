@@ -15,7 +15,12 @@ end
 ```
 
 **TODO:**
+
 Organize test case
+
+Improve testing
+
+Create a library and register to hex
 
 ## Installation
 sudo apt install build-essential
