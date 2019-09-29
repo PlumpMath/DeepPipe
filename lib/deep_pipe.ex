@@ -1,6 +1,11 @@
 #--------------
 # Deep Pipe for CBLAS Matrex
 defmodule DP do
+@moduledoc """
+A module that implements functions for deep learning 
+"""
+
+
   def stop() do
     raise("stop")
   end
