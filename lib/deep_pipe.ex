@@ -2,7 +2,7 @@
 # Deep Pipe for CBLAS Matrex
 defmodule DP do
 @moduledoc """
-A module that implements functions for deep learning 
+A module that implements functions for deep learning
 """
 
 
@@ -18,6 +18,12 @@ A module that implements functions for deep learning
     IO.puts("")
   end
 
+  @doc """
+  Takes number and apply it to sigmoid function
+  ## Example
+  iex> DP.sigmoid(1.2)
+  0.7685247834990175
+  """
   # activate function
   def sigmoid(x) do
     cond do
