@@ -34,7 +34,7 @@ module MNIST is code for MNIST data set
 module Time is time/1 for measure execution time
 
 ## running expample
-expample:
+```elixir
 iex(1)> require(Time)
 Time
 iex(2)> Time.time(Test.momentum(30,100))
@@ -51,6 +51,7 @@ accuracy rate = 0.879
 "time: 55248299 micro second"
 "-------------"
 :ok
+```
 
 ## specification:
 
