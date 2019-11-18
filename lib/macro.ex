@@ -1,4 +1,7 @@
 defmodule Time do
+  @moduledoc """
+  macro for measure execution time
+  """
   defmacro time(exp) do
     quote do
       {time, dict} = :timer.tc(fn -> unquote(exp) end)
@@ -10,6 +13,25 @@ defmodule Time do
 end
 
 defmodule Network do
+  @moduledoc """
+  defnetwork generates neural network(nn)
+  nn is list.
+  e.g. [{:weight,w,lr,v},{:bias,b,lr},{:function,f,g}]
+  each element is following.
+  - weight
+  {:weight,w,lr,v} w is matrix, lr is learning rate, v is for momentum,adagrad,adam
+  - bias
+  {:bias,b,lr,v} b is row vector
+  - filter
+  {:filter,w,lr,st,v} st is stradd for convolution
+  - pad
+  {:pad,n} n is size of padding
+  - pool
+  {:pool,st} st is stradd
+  - function
+  {:function,f,g,h} f is function, g is differential function, h is function name
+  softmax {:softmax,f,_ } f is function, only output layer softmax is set with cross_entropy
+  """
   defmacro defnetwork(name, do: body) do
     {_, _, [{arg, _, _}]} = name
     body1 = parse(body, arg)
@@ -231,7 +253,10 @@ defmodule Network do
     end
   end
 
-  # [{wx1,wh1,b1},..{wxr,whr,br}]
+  @doc """
+  generate RNN
+  [{wx1,wh1,b1},..{wxr,whr,br}]
+  """
   def gen_rnn(_, _, _, 0) do
     []
   end
@@ -260,9 +285,12 @@ defmodule Network do
     end
   end
 
-  # wx = wx(f),wx(g),wx(i),wx(o)
-  # wh = wh(f),wh(g),wh(i),wh(o)
-  # [{wx1,wh1,b1},...,{wxr,whr,br}]
+  @doc """
+  generate istm
+  wx = wx(f),wx(g),wx(i),wx(o)
+  wh = wh(f),wh(g),wh(i),wh(o)
+  [{wx1,wh1,b1},...,{wxr,whr,br}]
+  """
   def gen_lstm(_, _, _, 0) do
     []
   end
