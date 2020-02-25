@@ -118,7 +118,7 @@ st is stradd
 padding n is size of padding
 
 ##### pool(st)
-pooling stradd size is st
+pooling stride size is st
 
 ### module DP
 #### forward/2

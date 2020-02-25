@@ -1,6 +1,26 @@
 defmodule Test do
   import Network
 
+  # for debug
+  defnetwork debug(_x) do 
+    _x |> cw([[0.1,0.2,0.3],
+              [0.4,0.5,0.6],
+              [0.7,0.8,0.9]])
+       |> cb([[0.1,0.2,0.3]])
+       |> sigmoid
+  end 
+
+  def test() do 
+    y = Matrex.new([[0.1,0.2,0.3]])
+    t = Matrex.new([[0.2,0.3,0.4]])
+    network = debug(0)
+    network1 = DP.gradient(y,network,t) 
+    DP.learning(network,network1)
+    
+  end 
+
+
+
   # for DNN test
   defnetwork init_network1(_x) do
     _x |> w(784,300) |> b(300) |> relu
